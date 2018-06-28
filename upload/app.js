@@ -1,5 +1,6 @@
 const express = require('express')
 const parser = require('body-parser');
+const cors = require('cors')
 
 // Các router
 const {userRouter} = require('./controller/user.router')
@@ -11,7 +12,9 @@ const app = express();
 
 // Middleware recieve JSON body
 app.use(parser.json())
-app.use(parser.urlencoded({ extended:false }))
+app.use(parser.urlencoded({ extended:false }));
+
+app.use(cors());
 
 app.use ('/user', userRouter)
 

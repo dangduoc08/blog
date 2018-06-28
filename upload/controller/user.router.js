@@ -42,7 +42,7 @@ userRouter.get('/check', checkToken, async (req, res) => {
         const checkUser = await UserLogic.checkUser(req.idUser);
         res.send ({
             success: true,
-            checkUser
+            token: checkUser
         })
     }
     catch (error) {

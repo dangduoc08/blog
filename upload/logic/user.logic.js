@@ -42,13 +42,8 @@ class UserLogic {
     }
 
     static async checkUser (idUser) {
-        const checkUser = await userModel.findOne({ _id: idUser });
-        if ( !checkUser ) throw new MyError ('CAN_NOT_FIND_ANY_USER',400)
-        const obj = checkUser.toObject();
-        delete obj.password;
-        const token = await sign({ _id: obj._id })
-        obj.token = token;
-            return obj;
+        const token = await sign({ _id: idUser })
+        return token
     }
 }
 

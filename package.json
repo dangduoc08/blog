@@ -1,11 +1,12 @@
 {
-  "name": "blog",
+  "name": "blog_server",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
     "express": "^4.16.3",
     "jsonwebtoken": "^8.2.1",
     "mongoose": "4.13.7"
@@ -17,6 +18,6 @@
   "scripts": {
     "server": "nodemon upload/index.js",
     "test": "nodemon --exec mocha --recursive",
-    "start":"node upload/index.js"
+    "start": "node upload/index.js"
   }
 }
